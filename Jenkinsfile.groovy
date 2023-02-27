@@ -35,6 +35,7 @@ pipeline {
     always {
       script{
          //cleanWs() 
+        echo "Done"
       }
      }
   }
