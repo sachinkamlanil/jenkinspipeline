@@ -22,7 +22,7 @@ pipeline {
       steps {
         script{
           dir("codebase"){
-            bat "echo 'Hello ${params.NameList}' >> ${params.NameList}_file.txt"
+            writeFile file: "${params.NameList}_file.txt", text: "Hello ${params.NameList}"
             bat "git add ${params.NameList}_file.txt"
             bat "git commit -m 'Added ${params.NameList}_file.txt'"
             bat "git push" 
