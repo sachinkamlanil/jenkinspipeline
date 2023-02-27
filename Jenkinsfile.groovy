@@ -7,9 +7,10 @@ pipeline {
   }
   parameters {
       string(defaultValue: 'https://github.com/sachinkamlanil/jenkinspipeline.git', description: 'My Git Url', name: 'GIT_URL')
+      choice(choices: "Sujata\nRohit\nJagdish\nRupali",defaultValue: "Sujata" , description: 'Student List', name: 'NameList')
   }
   stages {
-    stage("FirstStage"){
+    stage("CodeCheckout"){
           steps {
             script {
               echo "Hello World $fname"
@@ -17,5 +18,17 @@ pipeline {
             }
           }
           }
+    stage("Echo Message Stage"){
+      steps {
+        script{
+          dir("codebase"){
+            echo "Hello ${params.NameList} > ${params.NameList}_file.txt"
+            bat "git add ${params.NameList}_file.txt"
+            bat "git commit -m 'Added ${params.NameList}_file.txt'"
+            bat "git push" 
+          }
+        }
+      }
+    }
   }  
 }
