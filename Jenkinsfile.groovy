@@ -12,8 +12,8 @@ pipeline {
     stage("FirstStage"){
           steps {
             script {
-              sh "Hello World $fname"
-              sh "git clone ${params.GIT_URL} codebase"
+              echo "Hello World $fname"
+              bat "git clone ${params.GIT_URL} codebase"
             }
           }
           }
