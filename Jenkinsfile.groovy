@@ -9,7 +9,7 @@ pipeline {
       string(defaultValue: 'https://github.com/sachinkamlanil/jenkinspipeline.git', description: 'My Git Url', name: 'GIT_URL')
   }
   stages {
-    stage("FirstStage){
+    stage("FirstStage"){
           steps {
             script {
               sh "Hello World $fname"
