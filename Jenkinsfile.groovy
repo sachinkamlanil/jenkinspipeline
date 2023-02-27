@@ -7,7 +7,7 @@ pipeline {
   }
   parameters {
       string(defaultValue: 'https://github.com/sachinkamlanil/jenkinspipeline.git', description: 'My Git Url', name: 'GIT_URL')
-      choice(choices: "Sujata\nRohit\nJagdish\nRupali",defaultValue: "Sujata" , description: 'Student List', name: 'NameList')
+      choice(choices: "Sujata\nRohit\nJagdish\nRupali", description: 'Student List', name: 'NameList')
   }
   stages {
     stage("CodeCheckout"){
