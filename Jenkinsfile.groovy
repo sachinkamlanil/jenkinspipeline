@@ -3,7 +3,7 @@ String fname = "Test"
 
 pipeline {
   agent {
-    
+     label "sachinmachine"
   }
   parameters {
       string(defaultValue: 'https://github.com/sachinkamlanil/jenkinspipeline.git', description: 'My Git Url', name: 'GIT_URL')
