@@ -24,8 +24,8 @@ pipeline {
           dir("codebase"){
             writeFile file: "${params.NameList}_file.txt", text: "Hello ${params.NameList}"
             bat "git add ${params.NameList}_file.txt"
-            bat "git commit -m 'Added ${params.NameList}_file.txt'"
-            bat "git push" 
+            //bat "git commit -m 'Added ${params.NameList}_file.txt'"
+            //bat "git push" 
           }
         }
       }
